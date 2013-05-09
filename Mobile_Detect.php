@@ -265,7 +265,6 @@ class Mobile_Detect {
         'Symbian'          => array('SymbianOS/[VER]', 'Symbian/[VER]'),
         'webOS'            => array('webOS/[VER]', 'hpwOS/[VER];'),
 
-
     );
 
     function __construct(){
@@ -624,7 +623,7 @@ class Mobile_Detect {
      */
     function prepareVersionNo($ver){
 
-        $ver = str_replace(array('_', ' ', '/'), array('.', '.', '.'), $ver);
+        $ver = str_replace(array('_', ' ', '/'), '.', $ver);
         $arrVer = explode('.', $ver, 2);
         if(isset($arrVer[1])){
             $arrVer[1] = @str_replace('.', '', $arrVer[1]); // @todo: treat strings versions.
